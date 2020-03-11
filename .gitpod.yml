@@ -1,0 +1,15 @@
+image: gitpod/workspace-full-vnc
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
+ports:
+  # - port: 5000
+  #  onOpen: ignore
+  - port: 8080
+    onOpen: open-preview
+tasks:
+  - command: python3 -m http.server 8080
+    name: Static Server
+  - openMode: split-right
+    command: echo SplitTerminal
+  - openIn: left
+    command: echo LeftPanelTerminal
